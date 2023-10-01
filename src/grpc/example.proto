@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package example;
+
+message DataRequest {
+  // 定义消息字段
+}
+
+message DataResponse {
+  string message = 1;
+  // 定义消息字段
+}
+
+service MyService {
+  rpc getData (DataRequest) returns (DataResponse);
+}
