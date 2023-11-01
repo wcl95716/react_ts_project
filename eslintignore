@@ -1,0 +1,9 @@
+dist
+node_modules
+src/utilities
+jest.config.js
+webpack.config.js
+.eslintrc.js
+shim-project-root.js
+**/__mock__/**
+copilotToolFE/**/*

@@ -1,12 +1,12 @@
 // use configureStore to create a store
 
 import { configureStore } from "@reduxjs/toolkit";
-import { exampleSlice } from "./apps/example/index.model";
+import exampleSliceReducer from "./apps/example/index.model";
 
 export const store = configureStore({
     reducer: {
-        exampleData: exampleSlice.reducer,
-    }
+        exampleData: exampleSliceReducer,
+    },
 });
 
 // RootState is the type of the root state

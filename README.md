@@ -44,3 +44,31 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+、、、
+    // "mime": "^3.0.0",
+    // "react-devtools": "^4.24.7",
+    // "speed-measure-webpack-plugin": "^1.5.0",
+    // "terser-webpack-plugin": "^5.3.1",
+    // "express": "^4.18.2",
+    // "fast-json-stable-stringify": "^2.1.0",
+    // "file-loader": "^6.2.0",
+    // "fork-ts-checker-webpack-plugin": "^7.2.13",
+    // "fs-jetpack": "^4.3.1",
+    // "html-webpack-plugin": "^5.5.0",
+    // "compression-webpack-plugin": "^10.0.0",
+    // "cors": "^2.8.5",
+    // "json-schema": "^0.4.0",
+    // "json-schema-faker": "^0.5.0-rcv.44",
+    // "ts-loader": "^9.2.8",
+    // "uglify-js": "^3.15.3",
+    // "url-loader": "^4.1.1",
+    // "webpack": "^5.70.0",
+    // "webpack-bundle-analyzer": "^4.7.0",
+    // "webpack-cli": "^4.9.2",
+    // "webpack-merge": "^5.8.0",
+    // "webpack-sources": "^3.2.3",
+    // "workbox-webpack-plugin": "^6.5.2",
+    // "zlib": "^1.0.5"
+、、、

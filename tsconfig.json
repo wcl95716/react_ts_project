@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src", // 这里添加了baseUrl以便在项目内进行模块解析
     "target": "es6",
     "lib": [
       "dom",
@@ -21,6 +22,8 @@
     "jsx": "react"
   },
   "include": [
-    "src"
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.js"
   ]
 }
