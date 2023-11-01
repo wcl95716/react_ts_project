@@ -4,22 +4,24 @@ import './App.css';
 
 import { Provider } from 'react-redux';
 import { store } from './store';
+
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ExampleGrpc from './apps/example';
+
+
 
 function App() {
   return (
     <Provider store={store}>
-          <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <ExampleGrpc /> 
-      </header>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<ExampleGrpc />} />
+          <Route path="/test1" element={<ExampleGrpc />} />
+          <Route path="/test2" element={<ExampleGrpc />} />
+        </Routes>
+      </Router>
     </Provider>
-
   );
 }
 

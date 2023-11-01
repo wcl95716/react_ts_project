@@ -15,6 +15,7 @@ export const getTestRequest = createAsyncThunk(
 
 const initialState = {
     initData:{},
+    testData: "123",
 }
 
 // store initData
@@ -26,6 +27,9 @@ export const exampleSlice = createSlice({
         init: (state, action) => {
             state.initData = action.payload;
         },
+        changeData:(state, action) =>{
+            state.testData = "456";
+        }
     },
     extraReducers:
     (builder) => {
@@ -35,11 +39,11 @@ export const exampleSlice = createSlice({
     },
 });
 
-export const { init } = exampleSlice.actions;
+export const { init ,changeData } = exampleSlice.actions;
 
 export default exampleSlice.reducer;
 
 // selector 
 export const selectInitData = (state: RootState) => state.exampleData.initData;
-
+export const selectTestData = (state: RootState) => state.exampleData.testData;
 // Path: src\componens\video\index.tsx
