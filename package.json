@@ -4,8 +4,11 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "@fluentui/react-components": "^9.37.1",
+    "@fluentui/react-search-preview": "^0.1.30",
     "@improbable-eng/grpc-web": "^0.15.0",
     "@reduxjs/toolkit": "^1.9.5",
+    "@storybook/api": "^7.5.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,7 +29,7 @@
     "ts-morph": "^19.0.0",
     "ts-node": "^10.9.1",
     "ts-simple-ast": "^21.0.4",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.0-dev.20231101",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
