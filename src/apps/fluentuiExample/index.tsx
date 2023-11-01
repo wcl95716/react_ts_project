@@ -7,17 +7,7 @@ import {
     useId,
 } from "@fluentui/react-components";
 import type { DropdownProps } from "@fluentui/react-components";
-
-const useStyles = makeStyles({
-    root: {
-    // Stack the label above the field with a gap
-        display: "grid",
-        gridTemplateRows: "repeat(1fr)",
-        justifyItems: "start",
-        ...shorthands.gap("2px"),
-        maxWidth: "400px",
-    },
-});
+import { useStyles } from "./index.style";
 
 export const Default = (props: Partial<DropdownProps>) => {
     const dropdownId = useId("dropdown-default");
@@ -38,6 +28,7 @@ export const Default = (props: Partial<DropdownProps>) => {
         <div className={styles.root}>
             {/* <label id={dropdownId}>Best pet</label> */}
             <Dropdown
+                className={styles.dropdown}
                 aria-labelledby={dropdownId}
                 placeholder="Select an animal"
                 {...props}

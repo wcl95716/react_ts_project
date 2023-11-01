@@ -10,7 +10,7 @@ export const useStyles = makeStyles({
         maxWidth: "400px",
     },
     dropdown: {
-        width: "30rem",
+        width: "50rem",
     },
 
 });
