@@ -4,6 +4,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import AntdExample from "apps/antdExample";
 import { store } from "./store";
 
 import ExampleGrpc from "./apps/example";
@@ -20,6 +21,7 @@ const App = (): JSX.Element => (
                         <Route path="/" element={<ExampleGrpc />} />
                         <Route path="/test1" element={<ExampleGrpc />} />
                         <Route path="/test2" element={<Default />} />
+                        <Route path="/test3" element={<AntdExample />} />
                     </Routes>
                 </Layout>
             </Router>
