@@ -15,7 +15,7 @@ export const initialStateRequest = createAsyncThunk(
 export const fetchItems = createAsyncThunk(
     "wordLearn/fetchItems",
     async (word: string) => {
-        const response = await fetch(`https://woasishenappservice-eacsdgd9gvcybxhe.eastus-01.azurewebsites.net/search?word${word}`);
+        const response = await fetch(`https://woasishenappservice-eacsdgd9gvcybxhe.eastus-01.azurewebsites.net/search?word=${word}`);
         if (!response.ok) {
             throw new Error("Failed to fetch items");
         }
