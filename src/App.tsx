@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import AntdExample from "apps/antdExample";
+import WordLearn from "apps/wordLearn";
 import { navigationItems } from "components/NavigationBar/index";
 import { store } from "./store";
 
@@ -17,14 +18,15 @@ const App = (): JSX.Element => (
     <Provider store={store}>
         <FluentProvider theme={webLightTheme}>
             <Router>
-                <NavigationBar items={navigationItems}>
+                {/* <NavigationBar items={navigationItems}> */}
                     <Routes>
                         <Route path="/" element={<ExampleGrpc />} />
                         <Route path="/test1" element={<ExampleGrpc />} />
                         <Route path="/test2" element={<Default />} />
                         <Route path="/test3" element={<AntdExample />} />
+                        <Route path="/word" element={<WordLearn />} />
                     </Routes>
-                </NavigationBar>
+                {/* </NavigationBar> */}
             </Router>
         </FluentProvider>
     </Provider>
