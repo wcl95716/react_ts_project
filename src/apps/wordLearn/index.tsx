@@ -1,28 +1,9 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store";
 import { makeStyles } from "@fluentui/react-components";
-import { fetchItems, selectItems } from "./index.model";
+import { clearItems, fetchItems, selectItems } from "./index.model";
 import Item from "./component/Item";
-
-const VideoComponent: React.FC = () => {
-    const dispatch = useAppDispatch();
-    const items = useAppSelector(selectItems);
-
-    useEffect(() => {
-        const word = "instinct"; // Example word
-        dispatch(fetchItems(word));
-    }, [dispatch]);
-
-    useEffect(() => {
-        // Fetch the items
-        console.log(items);
-    }, [items]);
-    return (
-        <div>
-            asd
-        </div>
-    );
-};
+import SearchBar from "./component/SearchBar";
 
 const useStyles = makeStyles({
     container: {
@@ -38,15 +19,20 @@ const VideoPage: React.FC = () => {
     const items = useAppSelector(selectItems);
 
     // useEffect(() => {
-    //     const word = "instinct"; // Example word
+    //     const word = "mature"; // Example word
     //     dispatch(fetchItems(word));
     // }, []);
 
-    useEffect(() => {
-        // Fetch the items
-        console.log(items);
-        console.log(items.length);
-    }, [items]);
+    // useEffect(() => {
+    //     // Fetch the items
+    //     console.log(items);
+    //     console.log(items.length);
+    // }, [items]);
+
+    const serchWord = (word: string) => {
+        dispatch(clearItems());
+        dispatch(fetchItems(word));
+    };
 
     return (
         <div style={{
@@ -55,6 +41,7 @@ const VideoPage: React.FC = () => {
             alignItems: "center",
         }}
         >
+            <SearchBar onSearch={serchWord} />
             {items && items.length > 0 ? (
                 items.map((item, index) => (
                     <Item

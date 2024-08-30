@@ -66,7 +66,7 @@ const FragmentPlayer: React.FC<FragmentPlayerProps> = ({ fragment }) => {
                             <DialogTrigger disableButtonEnhancement>
                                 <Button appearance="secondary">Close</Button>
                             </DialogTrigger>
-                            <Button appearance="primary">Do Something</Button>
+                            {/* <Button appearance="primary">Do Something</Button> */}
                         </DialogActions>
                     </DialogBody>
                 </DialogSurface>

@@ -15,12 +15,13 @@ export const initialStateRequest = createAsyncThunk(
 export const fetchItems = createAsyncThunk(
     "wordLearn/fetchItems",
     async (word: string) => {
-        const response = await fetch(`https://woasishenappservice-eacsdgd9gvcybxhe.eastus-01.azurewebsites.net/search?word=${word}`);
+        const response = await fetch(`https://woasishenappservice-eacsdgd9gvcybxhe.eastus-01.azurewebsites.net/search?word${word}`);
         if (!response.ok) {
             throw new Error("Failed to fetch items");
         }
         const data = await response.json();
-        return data.items; // assuming the data has an 'items' field containing the array
+        console.log("data: ", data);
+        return data; // assuming the data has an 'items' field containing the array
     },
 );
 
@@ -126,7 +127,7 @@ const itemsLo:DataItem[] = [
     },
 ];
 const initialState:DataState = {
-    items: itemsLo,
+    items: [],
 };
 
 // store initData
@@ -135,6 +136,9 @@ const wordLearnSlice = createSlice({
     name: "video",
     initialState,
     reducers: {
+        clearItems: (state) => {
+            state.items = [];
+        },
     },
     extraReducers:
     (builder) => {
@@ -144,7 +148,11 @@ const wordLearnSlice = createSlice({
             })
             .addCase(fetchItems.fulfilled, (state, action) => {
                 console.log("action.payload: ", action.payload);
-                state.items = action.payload; // Update the items with the fetched data
+                if (action.payload !== undefined) {
+                    state.items = action.payload; // Update the items with the fetched data
+                } else {
+                    state.items = [];
+                }
             })
             .addCase(fetchItems.rejected, (state, action) => {
             // Optional: Handle error state
@@ -154,7 +162,7 @@ const wordLearnSlice = createSlice({
 });
 
 // eslint-disable-next-line no-empty-pattern
-export const {} = wordLearnSlice.actions;
+export const { clearItems } = wordLearnSlice.actions;
 
 // selector
 export const selectItems = (state: RootState) => state.wordLearn.items;
